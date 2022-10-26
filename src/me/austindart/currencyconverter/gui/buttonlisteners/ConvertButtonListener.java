@@ -8,6 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+/**
+ * ConvertButtonListener is the ActionListener used for the Calculate button
+ *
+ * @param gui ConverterGUI that the related button is a member of
+ *
+ * @author Austin Dart
+ */
 public record ConvertButtonListener(ConverterGUI gui) implements ActionListener
 {
     @Override

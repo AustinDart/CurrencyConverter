@@ -3,6 +3,10 @@ package me.austindart.currencyconverter.gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * BaseGUI is a basic GUI. Just a JFrame and JPanel with nothing else.
+ * @author Austin Dart
+ */
 public class BaseGUI
 {
 

@@ -11,6 +11,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 
+/**
+ * ConversionUtils is a utility class for converting currencies
+ * @author Austin Dart
+ */
 public class ConversionUtils
 {
 

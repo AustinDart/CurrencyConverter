@@ -6,7 +6,14 @@ import me.austindart.currencyconverter.gui.buttonlisteners.ConvertButtonListener
 import javax.swing.*;
 import java.awt.*;
 
-public class ConverterGUI extends BaseGUI {
+/**
+ * ConverterGUI is a GUI made specially for CurrencyConverter.
+ * Contains several methods to share/receive information with/from the rest of the program.
+ *
+ * @author Austin Dart
+ */
+public class ConverterGUI extends BaseGUI
+{
 
     private String apiKey;
 
@@ -25,7 +32,8 @@ public class ConverterGUI extends BaseGUI {
     private JTextField apiKeyTextField;
     private JButton apiKeySubmitButton;
 
-    public ConverterGUI() {
+    public ConverterGUI()
+    {
         super();
         inputLabel = new JLabel("Input amount:");
         inputTextField = new JTextField(10);
@@ -81,42 +89,89 @@ public class ConverterGUI extends BaseGUI {
         jFrame.pack();
     }
 
-    public String getInputCurrency() {
+    /**
+     * Gets the currency code from the input spinner
+     *
+     * @return Currency code from the input spinner
+     */
+    public String getInputCurrency()
+    {
         return inputSpinner.getValue().toString();
     }
 
-    public String getOutputCurrency() {
+    /**
+     * Gets the currency code from the output spinner
+     *
+     * @return Currency code from the output spinner
+     */
+    public String getOutputCurrency()
+    {
         return outputSpinner.getValue().toString();
     }
 
-    public double getValueFromInput() {
+    /**
+     * Gets the value from the input text field
+     *
+     * @return Double value from the input text field
+     */
+    public double getValueFromInput()
+    {
         String inputText = inputTextField.getText();
         double value;
-        try {
+        try
+        {
             value = Double.parseDouble(inputText);
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e)
+        {
             value = -1;
         }
         return value;
     }
 
-    public void setOutputText(String text) {
+    /**
+     * Sets the output text in the output label
+     *
+     * @param text Text is set
+     */
+    public void setOutputText(String text)
+    {
         outputText.setText(text);
     }
 
-    public void setAPIKey(String apiKey) {
+    /**
+     * Sets the private API key
+     *
+     * @param apiKey The API Key to set
+     */
+    public void setAPIKey(String apiKey)
+    {
         this.apiKey = apiKey;
     }
 
-    public String getAPIKey() {
+    /**
+     * Gets the private API Key
+     *
+     * @return The private API Key
+     */
+    public String getAPIKey()
+    {
         return apiKey;
     }
 
-    public String getInputAPIKey() {
+    /**
+     * Gets the input API Key from the API Key text field
+     * @return The input API Key from the API Key text field
+     */
+    public String getInputAPIKey()
+    {
         return apiKeyTextField.getText();
     }
 
-    private void setupButtons() {
+    /**
+     * Sets up all the buttons in the ConverterGUI
+     */
+    private void setupButtons()
+    {
         calculateButton.addActionListener(new ConvertButtonListener(this));
         apiKeySubmitButton.addActionListener(new APIKeySubmitButtonListener(this));
     }
